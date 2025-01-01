@@ -37,8 +37,6 @@ int main(int argc, char **argv) {
 	unsigned int count = 0;
 	int ret = 1;
 
-	memset(&rfc3164_re, 0, sizeof(regex_t));
-
 	/* open socket */
 	if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
 		perror("could not open socket");
@@ -85,6 +83,10 @@ int main(int argc, char **argv) {
 		}
 
 		if (regexec(&rfc3164_re, buffer, 8, rfc3164_matches, 0) == 0) {
+
+
+
+
 
 
 		} else {  /* no match or error */
